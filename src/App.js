@@ -8,7 +8,7 @@ function App() {
         <Header/>
       </div>
       <div className="footer mt-3">
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     </>
   );
