@@ -1,5 +1,6 @@
 import React from 'react'
 import homeimg from '../images/home.svg'
+
 function Home() {
   return (
     <div className='container'>

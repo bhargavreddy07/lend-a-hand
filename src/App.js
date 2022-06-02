@@ -7,7 +7,7 @@ function App() {
       <div className="content">
         <Header/>
       </div>
-      <div className="footer mt-3">
+      <div className='App'>
         <Footer/>
       </div>
     </>
