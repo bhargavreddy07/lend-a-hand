@@ -1,8 +1,5 @@
 import React from 'react'
 import {FormControl,InputGroup} from 'react-bootstrap'
-import {Dropdown} from 'react-bootstrap'
-
-import {useState} from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import {Form,Button,Dropdown} from 'react-bootstrap';
 import {useForm} from 'react-hook-form';
@@ -25,7 +22,7 @@ function Signup() {
 
     
     const {register,handleSubmit,formState:{errors}}=useForm()
-    const navigate=useNaviga
+    const navigate=useNavigate()
     
 
     // Input Password Component
@@ -171,32 +168,28 @@ function Signup() {
         {errors.nine && <p className="text-danger">*pls select the class</p>}
         </div>
         
-
-
-
-<Form.Label>Subjects</Form.Label>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="subjects" id="maths" value="maths" {...register("maths")}/>
-  <label class="form-check-label" for="exampleRadios1">
-   Maths
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="subjects" id="physics" value="physics" {...register("physics")}/>
-  <label class="form-check-label" for="exampleRadios2">
-    Physics
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="subjects" id="english" value="english" {...register("english")}/>
-  <label class="form-check-label" for="exampleRadios3">
-    English
-  </label>
-</div>
-
-
-
-
+        <div>
+        <Form.Label>Select subjects</Form.Label>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="maths" id="maths" {...register("maths",{required:true})}/>
+        <label class="form-check-label" for="maths">
+        Maths
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="english" id="english" {...register("english")}/>
+        <label class="form-check-label" for="english">
+            English
+        </label>
+        </div>
+        <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" value="Physics" id="Physics" {...register("Physics")}/>
+        <label class="form-check-label" for="Physics">
+            Physics
+        </label>
+        </div>
+        </div>
+        {errors.maths && <p className="text-danger">*pls select the subject</p>}
       
         <Button variant="primary" type="submit">
             sign in <FaSignInAlt/>
