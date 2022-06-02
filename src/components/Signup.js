@@ -140,7 +140,7 @@ function Signup() {
         </div>
         
 
-
+        <div>
         <Form.Label>Select classes</Form.Label>
         <div class="form-check">
         <input class="form-check-input" type="checkbox" value="nine" id="nine" {...register("nine",{required:true})}/>
@@ -165,6 +165,7 @@ function Signup() {
         <label class="form-check-label" for="twelve">
             XII
         </label>
+        </div>
         {errors.nine && <p className="text-danger">*pls select the class</p>}
         </div>
         
